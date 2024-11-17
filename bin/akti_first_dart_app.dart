@@ -130,19 +130,40 @@ void main() {
   //
   // print('End');
 
-  int n1, n2;
-  String choice;
+  // int n1, n2;
+  // String choice;
+  //
+  // do {
+  //   print('Enter first number : ');
+  //   n1 = int.parse(stdin.readLineSync()!);
+  //   print('Enter second number : ');
+  //   n2 = int.parse(stdin.readLineSync()!);
+  //
+  //   print("Sum = ${n1 + n2}");
+  //   print('Do you want more additions(yes/no) ? ');
+  //   choice = stdin.readLineSync()!;
+  // } while (choice == 'yes');
+  //
+  // print('Thank you for using our calculator');
 
-  do {
-    print('Enter first number : ');
-    n1 = int.parse(stdin.readLineSync()!);
-    print('Enter second number : ');
-    n2 = int.parse(stdin.readLineSync()!);
+  List<String> studentList = ["Haleem Ullah", "Musaddiq"];
+  studentList.add("Shaheer");
+  studentList.add('Usman');
+  studentList.add("Abdus Samad");
+  studentList.add("Abu Bakar");
+  studentList.add("Kiran");
 
-    print("Sum = ${n1 + n2}");
-    print('Do you want more additions(yes/no) ? ');
-    choice = stdin.readLineSync()!;
-  } while (choice == 'yes');
+  studentList.addAll(['Ali', 'Bilal']);
+  print(studentList);
 
-  print('Thank you for using our calculator');
+  studentList.insert(1, 'Abid');
+  //
+  // print(studentList[3]);
+  // studentList[3] = 'Usman Ali';
+  // print(studentList[3]);
+  studentList.removeAt(0);
+  print(studentList);
+
+
+
 }
