@@ -103,16 +103,13 @@ void main()
   if( monthNumber == 1){
     print('January');
   }
-
-  if( monthNumber == 2){
+  else if( monthNumber == 2){
     print('February');
   }
-
-  if( monthNumber == 12 ){
+  else if( monthNumber == 12 ){
     print('December');
   }
-
-  if( monthNumber > 12 ){
+  else{
     print('Invalid');
   }
 }
