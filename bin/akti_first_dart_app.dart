@@ -58,7 +58,7 @@ void main()
   // // String interpolation
   // String fullName = "My name is $firstName $lastName [ $university ]";
   // print(fullName);
-  //
+//
   // print( 7 + 5);
   // print( 7 - 5);
   // print( 7 * 5);
@@ -114,13 +114,43 @@ void main()
   // }
 
 
-  int number, remainder;
-  print('Enter a number : ');
-  number = int.parse( stdin.readLineSync()! );
+  // int number, remainder;
+  // print('Enter a number : ');
+  // number = int.parse( stdin.readLineSync()! );
+  //
+  // remainder = number % 2;
+  //
+  // (remainder == 0) ? print('Even') : print('Odd');
 
-  remainder = number % 2;
+  // int i = 1;
+  //
+  // while( i <= 10 )
+  // {
+  //   print('Pakistan $i');
+  //   i++;
+  // }
+  //
+  // print('End');
 
-  (remainder == 0) ? print('Even') : print('Odd');
+
+
+  int n1, n2;
+  String choice = 'yes';
+
+   while( choice == 'yes')
+   {
+    print('Enter first number : ');
+    n1 = int.parse( stdin.readLineSync()! );
+    print('Enter second number : ');
+    n2 = int.parse( stdin.readLineSync()! );
+
+    print("Sum = ${n1+n2}");
+    print('Do you want more additions(yes/no) ? ');
+    choice = stdin.readLineSync()!;
+
+  }
+
+  print('Thank you for using our calculator');
 }
 
 
