@@ -146,24 +146,59 @@ void main() {
   //
   // print('Thank you for using our calculator');
 
-  List<String> studentList = ["Haleem Ullah", "Musaddiq"];
-  studentList.add("Shaheer");
-  studentList.add('Usman');
-  studentList.add("Abdus Samad");
-  studentList.add("Abu Bakar");
-  studentList.add("Kiran");
-
-  studentList.addAll(['Ali', 'Bilal']);
-  print(studentList);
-
-  studentList.insert(1, 'Abid');
+  // List<String> studentList = ["Haleem Ullah", "Musaddiq"];
+  // studentList.add("Shaheer");
+  // studentList.add('Usman');
+  // studentList.add("Abdus Samad");
+  // studentList.add("Abu Bakar");
+  // studentList.add("Kiran");
   //
-  // print(studentList[3]);
-  // studentList[3] = 'Usman Ali';
-  // print(studentList[3]);
-  studentList.removeAt(0);
-  print(studentList);
+  // for ( int i = 0; i < studentList.length; i++ ){
+  //   print(studentList[i]);
+  // }
+  // print('*********************');
+  //
+  // for( String s in studentList){
+  //   print(s);
+  // }
 
 
+  // Map<String, int> sscMarks = {
+  //   'Haleem': 765,
+  //   'Musaddiq': 766,
+  // };
+  //
+  // print(sscMarks['Musaddiq']);
 
+  Map<String, dynamic> playerInfo = {
+    'name': 'Babar Azam',
+    'jersey': 56,
+    'married': false,
+    'country': 'Pakistan',
+    'odiAverage': 88.3,
+    'last_5_innings': [ 44, 34, 23, 99, 34],
+  };
+
+  Map<String, dynamic> player2Info = {
+    'name': 'Virat Kohli',
+    'jersey': 99,
+    'married': true,
+    'country': 'India',
+    'odiAverage': 98.3,
+    'last_5_innings': [ 144, 34, 23, 99, 34],
+  };
+
+  List<Map<String, dynamic>> top5Players = [
+    playerInfo,
+    player2Info,
+    {
+      'name': 'M Rizwan',
+      'jersey': 23,
+      'married': true,
+      'country': 'Pakistan',
+      'odiAverage': 98.3,
+      'last_5_innings': [ 144, 34, 23, 99, 34],
+    }
+
+  ];
 }
