@@ -9,8 +9,7 @@
 
 import 'dart:io';
 
-void main()
-{
+void main() {
   // print('Hello World');
   //
   // // variable declare
@@ -113,7 +112,6 @@ void main()
   //   print('Invalid');
   // }
 
-
   // int number, remainder;
   // print('Enter a number : ');
   // number = int.parse( stdin.readLineSync()! );
@@ -132,46 +130,19 @@ void main()
   //
   // print('End');
 
-
-
   int n1, n2;
-  String choice = 'yes';
+  String choice;
 
-   while( choice == 'yes')
-   {
+  do {
     print('Enter first number : ');
-    n1 = int.parse( stdin.readLineSync()! );
+    n1 = int.parse(stdin.readLineSync()!);
     print('Enter second number : ');
-    n2 = int.parse( stdin.readLineSync()! );
+    n2 = int.parse(stdin.readLineSync()!);
 
-    print("Sum = ${n1+n2}");
+    print("Sum = ${n1 + n2}");
     print('Do you want more additions(yes/no) ? ');
     choice = stdin.readLineSync()!;
-
-  }
+  } while (choice == 'yes');
 
   print('Thank you for using our calculator');
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
