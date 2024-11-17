@@ -84,16 +84,36 @@ void main()
   // sum = num1 + num2;
   // print('Sum of $num1 and $num2 = $sum');
 
-  int number, remainder;
-  print('Enter a number : ');
-  number = int.parse( stdin.readLineSync()! );
+  // int number, remainder;
+  // print('Enter a number : ');
+  // number = int.parse( stdin.readLineSync()! );
+  //
+  // remainder = number % 2;
+  //
+  // if( remainder == 1) {
+  //   print('$number is odd');
+  // }else{
+  //   print('$number is even');
+  // }
 
-  remainder = number % 2;
+  int monthNumber;
+  print('Enter month number : ');
+  monthNumber = int.parse( stdin.readLineSync()!);
 
-  if( remainder == 1) {
-    print('$number is odd');
-  }else{
-    print('$number is even');
+  if( monthNumber == 1){
+    print('January');
+  }
+
+  if( monthNumber == 2){
+    print('February');
+  }
+
+  if( monthNumber == 12 ){
+    print('December');
+  }
+
+  if( monthNumber > 12 ){
+    print('Invalid');
   }
 }
 
