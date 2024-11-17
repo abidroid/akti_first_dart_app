@@ -96,22 +96,31 @@ void main()
   //   print('$number is even');
   // }
 
-  int monthNumber;
-  print('Enter month number : ');
-  monthNumber = int.parse( stdin.readLineSync()!);
+  // int monthNumber;
+  // print('Enter month number : ');
+  // monthNumber = int.parse( stdin.readLineSync()!);
+  //
+  // if( monthNumber == 1){
+  //   print('January');
+  // }
+  // else if( monthNumber == 2){
+  //   print('February');
+  // }
+  // else if( monthNumber == 12 ){
+  //   print('December');
+  // }
+  // else{
+  //   print('Invalid');
+  // }
 
-  if( monthNumber == 1){
-    print('January');
-  }
-  else if( monthNumber == 2){
-    print('February');
-  }
-  else if( monthNumber == 12 ){
-    print('December');
-  }
-  else{
-    print('Invalid');
-  }
+
+  int number, remainder;
+  print('Enter a number : ');
+  number = int.parse( stdin.readLineSync()! );
+
+  remainder = number % 2;
+
+  (remainder == 0) ? print('Even') : print('Odd');
 }
 
 
