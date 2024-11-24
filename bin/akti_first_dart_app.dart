@@ -1,88 +1,107 @@
-// single line
+class Person {
+  String name;
+  String gender;
+  String dob;
 
-/*
-  this is
-  our
-  first
-  Dart program
- */
+  Person({required this.name, required this.gender, required this.dob});
 
-import 'dart:io';
+  void displayPerson() {
 
-void printStars() => print('***********************************');
-
-void drawLine(String symbol) {
-  for (int i = 1; i < 40; i++) {
-    stdout.write(symbol);
   }
-
-  print('');
 }
 
-void sum(int a, int b) => print('Sum = ${a + b}');
+class Doctor extends Person {
+  String spe;
+  int fee;
 
-// positional parameters
-// named parameters
-void table({required int value, int range = 10}) // called function
-{
-  for (int i = 1; i <= range; i++) {
-    print('$value X $i = ${value * i}');
-  }
-
-  printStars();
-  print('Table Written');
+  Doctor({
+    required String name,
+    required String gender,
+    required String dob,
+    required this.spe,
+    required this.fee,
+  }) : super(name: name, gender: gender, dob: dob);
 }
 
-double square(double value) {
-  return value * value;
+class Teacher extends Person {
+  String subject;
+
+  Teacher({
+    required String name,
+    required String gender,
+    required String dob,
+    required this.subject,
+  }) : super(name: name, gender: gender, dob: dob);
 }
 
-// Boss
-void main() {
-  // calling function
-  Student ali;
-  ali = Student(name: "Ali", mobile: "03838838383"); // default constructor call
+class Student extends Person {
+  Course course; // has a relationship, composition
 
-  ali.display();
-  Student bilal = Student(
-      name: "Bilal", mobile: "038838383", uni: "SUIT", cnic: "173838383838,");
-  bilal.display();
-
-  Student khan = Student.withJustName('Khan');
-
-  Student zia = Student(name: "Zia Khan", mobile: "9398383838383");
-}
-
-class Student {
-  late String name;
-  late String mobile;
-  String? uni;
-  String? cnic;
-
-  // parameterized constructor
   Student({
-    required this.name,
-    required this.mobile,
-    this.uni,
-    this.cnic,
-  });
-
-  // named constructor
-  Student.withJustName(String n) {
-    name = n;
-  }
-
-  // method
-  void display() {
-    print('Name $name');
-    print('Mobile $mobile');
-    print('Uni $uni');
-    print('CNIC $cnic');
-  }
+    required String name,
+    required String gender,
+    required String dob,
+    required this.course,
+  }) : super(name: name, gender: gender, dob: dob);
 }
 
 class Course {
-  late String name;
-  late String duration;
-  late String instructor;
+  String name;
+  String duration;
+  int fee;
+
+  Course({required this.name, required this.duration, required this.fee});
+}
+
+void main() {
+  Doctor hina = Doctor(
+    name: "Hina Gul",
+    gender: "F",
+    dob: "1st Nov",
+    spe: 'ENT',
+    fee: 2500,
+  );
+
+  Teacher abid = Teacher(
+    name: "Abid",
+    gender: "M",
+    dob: "2nd Nov",
+    subject: "Flutter",
+  );
+
+  List<Doctor> doctorsList = [
+    hina,
+    Doctor(
+      name: "Ali",
+      gender: "M",
+      dob: "2nd Dec",
+      spe: "Cardiologist",
+      fee: 3000,
+    ),
+  ];
+  List<Teacher> teachersList = [abid];
+
+  List<Person> persons = [
+    abid,
+    hina,
+    Teacher(name: "Zia", gender: "M", dob: "2 Mar", subject: "Web"),
+    Doctor(name: "Bilal", gender: "M", dob: "3 Apr", spe: "ENT", fee: 2000),
+  ];
+
+  Course flutter = Course(
+    name: "Flutter App Dev",
+    duration: "3 MOnths",
+    fee: 50000,
+  );
+
+  Student shaheer = Student(
+    name: "Shaheer",
+    gender: "M",
+    dob: "1 Dec",
+    course: Course(
+      name: "Web",
+      duration: "6 Months",
+      fee: 100000,
+    ),
+  );
 }
