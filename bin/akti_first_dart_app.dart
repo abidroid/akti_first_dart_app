@@ -45,50 +45,35 @@ double square( double value)
 
 // Boss
   void main() { // calling function
-  String name;
-
   Student ali;
-  ali = Student();
+  ali = Student("Ali", "03838838383", null, null); // default constructor call
+  ali.display();
+    Student bilal = Student("Bilal", "038838383", "SUIT", "173838383838");
+  bilal.display();
 
-  var bilal = Student();
-
-  ali.name = "Muhammad Ali";
-  ali.mobile = "838838338";
-  ali.uni = "KUST";
-  ali.cnic  = "27272727272727";
-
-
-  bilal.name = "M Bilal";
-  bilal.mobile = '03838838383';
-
-
-  Course flutter = Course(); // default constructor
-  flutter.name = "Flutter App Dev";
-  flutter.duration = "3 Months";
-  flutter.instructor = "Muhammad Abid";
-  print(flutter.name);
-
-  Course webDev = Course();
-
-
-  List<Student> studentList = [ali, bilal];
-
-  for( Student s in studentList){
-    s.display();
-  }
+  Student khan = Student.withJustName('Khan');
 }
 
-
-// camelCase
-
-// PascalCase
 class Student
 {
-   String name = '';
+  late String name;
   late String mobile;
   String? uni;
   String? cnic;
 
+  // parameterized constructor
+  Student(String n, String m, String? u, String? c) {
+    name = n;
+    mobile = m;
+    uni = u;
+    cnic = c;
+  }
+
+  // named constructor
+  Student.withJustName(String n){
+    name = n;
+  }
+  // method
   void display() {
     print('Name $name');
     print('Mobile $mobile');
